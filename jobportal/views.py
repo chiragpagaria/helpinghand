@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
 from django.views.generic import View
+from .models import UserInfo
 
 
 # Create your views here.
-class RegisterLoginPage(View):
-    template = "jobportal/register_login_page.html"
+class HomePage(View):
+    template = "jobportal/homepage.html"
 
     def get(self, request):
         return render(request, self.template, {})
@@ -18,10 +19,17 @@ class Register(View):
         return render(request, self.template, {})
 
     def post(self, request, *args, **kwargs):
-        print(request.POST.get('firstname'))
-        print(request.read())
-
-        return HttpResponse("In POST REGISTER")
+        if request.POST.get("firstname") and \
+                request.POST.get('lastname') and \
+                request.POST.get('email') and \
+                request.POST.get('pwd'):
+            userinfo = UserInfo()
+            userinfo.first_name = request.POST.get("firstname")
+            userinfo.last_name = request.POST.get("lastname")
+            userinfo.email = request.POST.get("email")
+            userinfo.password = request.POST.get("pwd")
+            userinfo.save()
+        return render(request, self.template, {})
 
 
 class Login(View):
@@ -31,5 +39,5 @@ class Login(View):
         return render(request, self.template, {})
 
     def post(self, request, *args, **kwargs):
-        return HttpResponse("In POST LOGIN")
-
+        if request.POST.get('email') and request.POST.get('pwd'):
+            return HttpResponse("SUCCESS")
