@@ -1,0 +1,41 @@
+{% extends "jobportal/base.html" %}
+{% block tittle%} Home {% endblock %}
+{% block content %}
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+      <ul class="nav navbar-nav">
+      <li><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1</a>
+      </li>
+      <li><a href="#">Page 2</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!--<div class="container">-->
+<!--    <div class="jumbotron">-->
+<!--        <style>-->
+<!--            .container-->
+<!--            {-->
+<!--                padding-top: 184px;-->
+<!--            }-->
+<!--        </style>-->
+<!--        <center>-->
+<!--            <button btn btn-lg onclick="location.href = '/register';">-->
+<!--                Register-->
+<!--            </button>-->
+
+<!--            <button btn btn-lg onclick="location.href = '/login';">-->
+<!--                Login-->
+<!--            </button>-->
+<!--        </center>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+{% endblock %}

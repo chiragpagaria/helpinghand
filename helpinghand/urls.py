@@ -18,7 +18,7 @@ from django.urls import path
 from jobportal import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.RegisterLoginPage.as_view(), name='home'),
+    path('',views.HomePage.as_view(), name='home'),
     path('register',views.Register.as_view(), name="register"),
     path('login',views.Login.as_view(), name="login"),
 ]
