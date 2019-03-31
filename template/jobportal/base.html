@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-{% load static %}
+
 <html lang="en">
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -7,8 +7,6 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<img src = "{% static "/Images/logo.jpg" %}">
-
 {% block content %}{% endblock %}
 </body>
 </html>
