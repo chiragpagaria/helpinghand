@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse
+from django.template import RequestContext
 from django.views.generic import View
 from .models import UserInfo
 
@@ -40,4 +41,6 @@ class Login(View):
 
     def post(self, request, *args, **kwargs):
         if request.POST.get('email') and request.POST.get('pwd'):
-            return HttpResponse("SUCCESS")
+            con = RequestContext(request)
+            print(con)
+        return HttpResponse("S")
