@@ -2,11 +2,13 @@
 
 <html lang="en">
 <head>
+    {% load static %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<img height="50" width="75" src = "{% static "Images/logo.jpg" %} ">
 {% block content %}{% endblock %}
 </body>
 </html>
