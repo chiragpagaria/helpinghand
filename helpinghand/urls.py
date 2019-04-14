@@ -21,5 +21,6 @@ urlpatterns = [
     path('',views.HomePage.as_view(), name='home'),
     path('register',views.Register.as_view(), name="register"),
     path('login',views.UserLogin.as_view(), name="login"),
-
+    path('psyform',views.PsyForm.as_view(), name="psyform"),
+    path('menform',views.PsyForm.as_view(), name="menform"),
 ]
